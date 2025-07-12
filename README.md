@@ -22,4 +22,89 @@ A RESTful API built with **Express**, **TypeScript**, and **MongoDB (Mongoose)**
 - Node.js (v18+)
 - MongoDB Atlas or local MongoDB
 - npm
+  
+## Running Locally
+```
+npm run dev
+```
+### For production
+```
+npm run build
 
+npm start
+
+```
+# API Endpoints
+##  Books
+
+### Create Book
+```
+POST /api/books
+```
+
+### Get All Books
+
+```
+GET /api/books?filter=FANTASY&sortBy=createdAt&sort=desc&limit=5
+
+```
+
+### Get Book by ID
+
+```
+GET /api/books/:bookId
+
+```
+
+### Update Book
+
+```
+PUT /api/books/:bookId
+
+```
+
+### Delete Book
+
+```
+DELETE /api/books/:bookId
+
+```
+## Borrow
+
+### Borrow a Book
+
+```
+POST /api/borrow
+
+```
+```
+{
+  "book": "REPLACE_WITH_BOOK_ID",
+  "quantity": 2,
+  "dueDate": "2025-07-18T00:00:00.000Z"
+}
+
+```
+
+### Borrow Summary
+
+```
+GET /api/borrow
+
+```
+- Output
+```
+[
+  {
+    "book": {
+      "title": "The Theory of Everything",
+      "isbn": "9780553380163"
+    },
+    "totalQuantity": 5
+  }
+]
+
+```
+
+# 👨‍💻 Author
+Made with ❤️ by Nissan [API Docs](https://assignment-3-tan-two.vercel.app/api)
